@@ -1,76 +1,41 @@
-# Venha ser um desenvolvedor da Cadastra
+# Teste Técnico Gabriel Crisanto
 
-Olá! Somos a Cadastra, uma Next-Gen Company que oferece soluções globais em marketing, tecnologia, estratégia de negócios, commerce, dados e analytics. Este desafio é voltado para o nosso Centro de Excelência (COE) de Commerce, especializado em implantação, migração, evolução e otimização de e-commerce.  Contamos com escritórios em 5 países, mas num formato de trabalho 100% home office.
+## Rodando o repositório
 
-Estamos em busca de Pessoas Desenvolvedoras `Front-end`, com sólidos conhecimentos em HTML, CSS e TS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+Considerando que o repositório já possui um setup inicial preparado para conseguir rodá-lo com o auxílio do gulp, é necessário fazer utilização do node em versões igual ou superior a 14.
 
-## O que procuramos
+Para instalar as dependências do projeto, pode se executar o comando `yarn`
 
-### Requisitos Obrigatórios
+Logo em seguida podemos startar nosso server para desenvolvimento com o comando `yarn start`
 
-- Html5, css3;
-- Javascript/Typescript;
-- Consumo de APIs.
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Nodejs
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
+Ele irá abrir dois servidores necessários para funcionamento do projeto:
 
-### Desejáveis:
+- o primeiro abrirá uma porta padrão para desenvolvimento local com a url http://localhost:3000
+- o segundo é um json server que utilizamos dentro do nosso ambiente front end para emularmos uma banco de dados que pode ser acessado através de requisição no localhost de porta 5000
 
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- Nodejs
+## Metodologia 
 
-----
+Embora não fique muito claro no código o uso de uma metodologia específica, temos algumas possibilidades listadas a seguir, que cooperaram para o desenvolvimento da página de categoria utilizando somente o TS, sem o auxílio de um framework como React, que facilitaria muito nossa escalabilidade e também escrita de código, por estarmos falando de uma ferramenta extremamente poderosa.
+Porém, isso não nos impediu de tentar utilizar algumas metodologias em alguns trechos de código, como:
+- **Programação Orientada a Objetos**: Com a utilização  de várias classes, como Product, usando objetos para representar entidades e funcionalidades relacionadas ao carrinho de compras, prateleira de produtos, filtros e utilitários DOM.
+- **Single Responsibility Principle**: Cada função ou método considera ter uma responsabilidade única e específica, como criar elementos HTML, formatar moeda brasileira, gerenciar o carrinho de compras, construir a prateleira de produtos, aplicar filtros, entre outros.
+- **Factory**: O método createHTMLElement do objeto DOMUtils pode ser considerado um padrão de fábrica, pois é responsável por criar e configurar elementos HTML com base em parâmetros fornecidos.
+- **Observer**: A lógica de atualização do carrinho de compras e da prateleira de produtos em resposta a eventos (como adição ou remoção de itens do carrinho) pode ser comparada ao padrão Observer, onde as mudanças em um objeto (o carrinho de compras) são refletidas em outros objetos (a prateleira de produtos).
 
-## Como se candidatar a vaga
+## Considerações finais
 
-- [Crie um fork desse projeto;](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- envie para [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Vaga%20DEV%20-%20Cadastra) com cópia para [andresa.klein@cadastra.com](mailto:andresa.klein?subject=Vaga%20DEV%20-%20Cadastra)
- 
+  Algumas decisões tomadas em código sobre a utilização de alguma metologia ou técnica de desenvolvimento para esse projeto, tem muita relação com minha rotina profissional como desenvolvedor Front End com VTEX CMS, em que muitas das coisas que pude utilizar nesse código são frutos de aprendizados que tive tomando a frente de alguns grandes clientes do mercado de Ecommerce, como por exemplo a marca de máquinas de bebidas da Brastemp, a B.Blend, sendo ela um case que agrega muito ao meu conhecimento rotineiro, além das atribuições que são minhas responsabilidades mais comuns como Front End, já tive oportunidades de estar somando desde modificações feitas em NODE, além de possuir um certo domínio prático do checkout da loja, assim como outras vertentes da VTEX como Master Data, Admin e até mesmo o Firebase.
 
-**obs.**: link do projeto [github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra)
+- [Link da Loja B.Blend;](https://loja.bblend.com.br/)
 
-### Instruções para o teste
+Para entrar em contato comigo:
 
-O layout se encontra no [figma](https://www.figma.com/file/Z5RCG3Ewzwm7XIPuhMUsBZ/Desafio-Cadastra?type=design&node-id=0%3A1&mode=design&t=A0G2fRjMSrcQjchw-1).
+<div>
+  <a href="https://www.linkedin.com/in/gabriel-crisanto" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://api.whatsapp.com/send/?phone=%2B5541984818428&text&app_absent=0" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" target="_blank"></a>
+  <a href = "mailto:gabrecrisanto@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.instagram.com/gabecris_/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+</div>
+<br>
 
-### Dependências
 
-O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs instalado na versão 14 ou superior.
-
-Para instalar as dependências só é preciso executar o comando: `npm install`
-
-O dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm start `
-
-Uma ver que o comando é dado ele irá levantar 2 servidores, sendo eles:
- - um para acessar o front-end que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000
- - um para o json-server que irá export uma api com a lista de produtos que roda na porta 5000. Para acessar os produtos é na url:  http://localhost:5000/products
-
-### Objetivo
-
-O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porem caso deseje utilizar frameworks como react, é possível adicionar ao setup.
-### Obrigatório
-
-- HTML5 e CSS3
-- Typescript
-- Requisição a API para obter os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
-
-#### Bônus
-
-- Typescript com clean code
-- Adição de processo no gulp para otimizar imagens
-
-##### Dúvidas: [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Dúvida%20Vaga%20DEV%20-%20Cadastra)
