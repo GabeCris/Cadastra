@@ -5,14 +5,145 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor Cadastra</title>
+  <title>Cadastra | Gabriel</title>
+  <link rel="icon" href="./img/cadastra_logo.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+  <header class="header">
+    <nav class="header__container">
+      <img class="header__logo" src="./img/logo-cadastra.png" alt="Logo Cadastra" />
+      <label for="toggle-minicart-modal">
+        <img class="header__minicart" src="./img/minicart.png" alt="Minicart" />
+        <p class="header__quantity">0</p>
+      </label>
+    </nav>
+  </header>
 
+  <section class="breadcrumb">
+    <h1>Blusas</h1>
+
+    <select class="_desktop-only" name="orderBy" id="order">
+      <option disabled selected>Ordenar por</option>
+    </select>
+
+    <nav class="filter-order _mobile-only">
+      <label for="toggle-filter-modal">
+        Filtrar
+      </label>
+      <label for="toggle-order-modal">
+        Ordenar
+      </label>
+    </nav>
+  </section>
+
+  <main class="container">
+
+    <aside class="filters modal">
+      <header class="modal__header _mobile-only">
+        <p class="modal__title">Filtrar</p>
+        <label class="modal__close" for="toggle-filter-modal">
+          <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.5 18.852L17.5547 1.00001" stroke="black" />
+            <line y1="-0.5" x2="25.2899" y2="-0.5" transform="matrix(0.711746 0.702437 -0.874311 0.485367 0 1.23547)"
+              stroke="black" />
+          </svg>
+          <input type="checkbox" id="toggle-filter-modal">
+        </label>
+
+      </header>
+
+      <div class="filters__content">
+        <h2 class="filters__title">Cores</h2>
+        <div class="filters__colors"></div>
+      </div>
+
+      <div class="filters__content">
+        <h2 class="filters__title">Tamanhos</h2>
+        <div class="filters__sizes"></div>
+      </div>
+
+      <div class="filters__content">
+        <h2 class="filters__title">Faixa de Preço</h2>
+        <div class="filters__prices"></div>
+      </div>
+
+      <div class="modal__buttons _mobile-only">
+        <label class="modal__apply" for="toggle-filter-modal">
+          Aplicar
+        </label>
+        <label class="modal__clear">
+          Limpar
+        </label>
+
+      </div>
+    </aside>
+    <section class="shelfs">
+    </section>
+  </main>
+
+  <button class="showMoreProducts">Carregar Mais</button>
+
+  <aside class="minicart modal">
+    <header class="modal__header">
+      <p class="modal__title">Carrinho</p>
+      <label class="modal__close" for="toggle-minicart-modal">
+        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.5 18.852L17.5547 1.00001" stroke="black" />
+          <line y1="-0.5" x2="25.2899" y2="-0.5" transform="matrix(0.711746 0.702437 -0.874311 0.485367 0 1.23547)"
+            stroke="black" />
+        </svg>
+        <input type="checkbox" id="toggle-minicart-modal">
+      </label>
+    </header>
+
+    <div class="modal__products">
+
+    </div>
+    <footer class="minicart__footer">
+      <p class="minicart__total">Total</p>
+      <p class="minicart__value"></p>
+    </footer>
+  </aside>
+
+  <aside class="order modal">
+    <header class="modal__header">
+      <p class="modal__title">Ordenar</p>
+      <label class="modal__close" for="toggle-order-modal">
+        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.5 18.852L17.5547 1.00001" stroke="black" />
+          <line y1="-0.5" x2="25.2899" y2="-0.5" transform="matrix(0.711746 0.702437 -0.874311 0.485367 0 1.23547)"
+            stroke="black" />
+        </svg>
+        <input type="checkbox" id="toggle-order-modal">
+      </label>
+    </header>
+
+    <div class="modal__products">
+      <label class="modal__order" for="toggle-order-modal" data-value="Mais recentes">
+        Mais recentes
+      </label>
+      <label class="modal__order" for="toggle-order-modal" data-value="Maior preço">
+        Maior preço
+      </label>
+      <label class="modal__order" for="toggle-order-modal" data-value="Menor preço">
+        Menor preço
+      </label>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p class="footer__copyright">
+      CADASTRA: Implantação de E-commerce VTEX
+    </p>
+  </footer>
 </body>
-<h1>Desafio Cadastra</h1>
 
 <script src="bundle.js"></script>
 
