@@ -1,0 +1,51 @@
+.shelf {
+    @include centralize($direction: column, $justify: space-between);
+    width: 195px;
+    min-height: 425px;
+    overflow: hidden;
+
+    @media ($small-mobile) {
+        width: auto;
+        max-width: 150px;
+        min-height: 360px;
+    }
+
+
+    &__image {
+        transition: .4s;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    &__name {
+        @include text($size: 14px);
+        text-align: center;
+        text-transform: uppercase;
+        margin-block: 14px 12px;
+    }
+
+    &__price {
+        @include text($weight: 700);
+    }
+
+    &__installment {
+        @include text(#666666);
+        margin-top: 6px;
+    }
+
+    &__button {
+        @include text($white-color, 14px, $weight: 700);
+        border: none;
+        outline: none;
+
+        background-color: $black-color;
+        padding-block: 10px;
+        margin-top: 16px;
+        width: 100%;
+        cursor: pointer;
+    }
+}

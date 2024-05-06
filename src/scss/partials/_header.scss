@@ -1,0 +1,43 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    height: 64px;
+    background-color: $white-color;
+    border-bottom: 3px solid #c7c7c7;
+    @include centralize();
+    padding-inline: 20px;
+
+    &__container {
+        @include centralize(space-between);
+        width: 100%;
+        max-width: $content-max-width;
+        margin: auto;
+    }
+
+    &__logo {
+        max-width: 165px;
+    }
+
+    &__minicart {
+        max-width: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__quantity {
+        position: absolute;
+        right: -5px;
+        top: 15px;
+        border-radius: 100%;
+        background: $primary-color;
+        @include text($white-color, 14px);
+        @include centralize();
+        width: 16px;
+        height: 16px;
+    }
+
+    label{
+        position: relative;
+    }
+}

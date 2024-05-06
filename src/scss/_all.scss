@@ -1,0 +1,18 @@
+// Colors
+$primary-color: #FB953E;
+$white-color: #ffffff;
+$black-color: #000000;
+$gray-color: #00000080;
+$dark-gray-color: #666666;
+
+// Fonts
+$base-font-color: $black-color;
+$base-font-size: 16px;
+$base-transition: all 0.3s;
+
+// Breakpoints
+$desktop: "min-width: 960px";
+$mobile: "max-width: 959px";
+$small-mobile: "max-width: 768px";
+
+$content-max-width: 1170px;

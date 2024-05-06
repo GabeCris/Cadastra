@@ -1,0 +1,13 @@
+@mixin text($color: $base-font-color, $size: $base-font-size, $weight: 400) {
+    font-size: $size;
+    line-height: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
+@mixin centralize($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}

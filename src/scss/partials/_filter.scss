@@ -1,0 +1,244 @@
+.filters {
+    &__content {
+        width: max-content;
+
+        &:first-child {
+            @media ($desktop) {
+                margin-bottom: 24px;
+            }
+        }
+
+        @media ($mobile) {
+            padding-inline: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @include text(#333333, 16px);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    &__colors {
+        ._see-all {
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0;
+            width: min-content;
+            white-space: nowrap;
+
+            @include text($dark-gray-color, 12px);
+            text-decoration: underline;
+
+            @media ($mobile) {
+                display: none !important;
+            }
+        }
+    }
+
+    &__colors,
+    &__prices {
+        @include centralize($direction: column, $align: flex-start);
+        gap: 10px;
+
+        .filter {
+            cursor: pointer;
+            @include centralize();
+            gap: 10px;
+
+            &:has(input:checked) {
+                &::before {
+                    background: $primary-color;
+                }
+
+            }
+
+            &::before {
+                content: "";
+                background: transparent;
+                display: block;
+                width: 10px;
+                height: 10px;
+                border: 3px solid $white-color;
+                outline: 2px solid $gray-color;
+            }
+        }
+    }
+
+    &__sizes {
+        display: grid;
+        grid-template-columns: repeat(4, 32px);
+        gap: 8px;
+
+        .filter {
+            cursor: pointer;
+            @include text($gray-color);
+            @include centralize;
+            width: 32px;
+            height: 32px;
+
+            border: 1px solid $gray-color;
+
+            &:has(input:checked) {
+                color: $black-color;
+                border-color: $primary-color;
+            }
+        }
+    }
+
+    @media ($mobile) {
+        &__title {
+            margin-bottom: 0px;
+            position: relative;
+
+            &::after {
+                content: ">";
+                position: absolute;
+                right: 0;
+                transform: rotate(90deg);
+                font-size: 30px;
+                color: $gray-color;
+                transition: .4s;
+            }
+
+            +.filters__colors,
+            +.filters__prices,
+            +.filters__sizes {
+                display: none;
+            }
+
+            &.active {
+                margin-bottom: 24px;
+
+                &::after {
+                    transform: rotate(270deg);
+                }
+
+                +.filters__colors,
+                +.filters__prices {
+                    display: flex;
+                }
+
+                +.filters__sizes {
+                    display: grid;
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $white-color;
+    transition: .5s;
+    z-index: 999;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    overflow-y: auto;
+    max-width: 400px;
+
+    @media ($mobile) {
+        max-width: none;
+    }
+
+    #toggle-minicart-modal,
+    #toggle-order-modal,
+    #toggle-filter-modal {
+        display: none;
+    }
+
+    &:has(#toggle-order-modal:checked),
+    &:has(#toggle-minicart-modal:checked) {
+        right: 0;
+    }
+
+    &:has(#toggle-filter-modal:checked) {
+        left: 0;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        border-bottom: 1px solid $dark-gray-color;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $white-color;
+        text-transform: uppercase;
+
+        position: sticky;
+        top: 0;
+
+        input {
+            display: none;
+        }
+    }
+
+    &__title {
+        @include text($dark-gray-color, 28px);
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 16px;
+        box-sizing: border-box;
+        gap: 20px;
+
+        label {
+            text-align: center;
+            padding: 16px;
+            width: 50%;
+            background-color: $primary-color;
+            @include text($white-color);
+
+            &.modal__clear {
+                border: 1px solid $dark-gray-color;
+                color: $dark-gray-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__products {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        gap: 16px;
+        margin-block: 20px 40px;
+        padding-inline: 16px;
+
+
+        &:empty {
+            &::before {
+                content: "Sua sacola está vazia";
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include text($dark-gray-color, 32px);
+            }
+        }
+    }
+
+    &__order {
+        @include text($black-color, 22px)
+    }
+}

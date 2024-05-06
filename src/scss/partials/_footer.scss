@@ -1,0 +1,11 @@
+.footer {
+    width: 100%;
+    height: 33px;
+    @include centralize();
+    background: $black-color;
+    margin-top: 35px;
+
+    &__copyright {
+        @include text($white-color)
+    }
+}

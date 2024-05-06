@@ -1,0 +1,55 @@
+.minicart {
+    left: auto;
+    right: -100%;
+
+    &__item {
+        display: grid;
+        grid-template-areas:
+            "image name remove"
+            "image color color"
+            "image price price";
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 70px 2fr 0.5fr;
+        gap: 10px;
+    }
+
+    &__image {
+        grid-area: image;
+        width: 100%;
+    }
+
+    &__name {
+        @include text($black-color, 16px, 700);
+        grid-area: name;
+    }
+
+    &__color {
+        @include text($dark-gray-color, 14px, 400);
+        grid-area: color;
+    }
+
+    &__price {
+        @include text($gray-color, 16px, 700);
+        grid-area: price;
+    }
+
+    &__remove {
+        @include text($gray-color, 12px, 400);
+        text-decoration: underline;
+        grid-area: remove;
+        cursor: pointer;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white-color;
+        border-top: 1px solid $dark-gray-color;
+        padding: 16px;
+        @include centralize($justify: space-between);
+        min-height: 60px;
+        box-sizing: border-box;
+    }
+}
